@@ -1,0 +1,21 @@
+#!/bin/bash
+
+serv=php-fpm
+
+sstat=$(pidof $serv | wc -l )
+
+if [ $sstat -gt 0 ]
+
+then
+
+echo "$serv is running fine ! ! !"
+
+else
+
+echo "$serv is down/dead"
+
+service $serv start
+
+fi
+
+

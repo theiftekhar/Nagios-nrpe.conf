@@ -1,0 +1,13 @@
+#!/bin/bash
+service=httpd
+if (( $(ps -ef | grep -v grep | grep $service | grep root | wc -l) >0 ))
+then 
+echo "$service is runing ! ! !";
+exit 0;
+else
+echo "need to start httpd";
+#/etc/init.d/$service start
+exit 2;
+fi
+
+
